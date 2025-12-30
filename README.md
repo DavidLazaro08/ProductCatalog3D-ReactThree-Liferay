@@ -2,7 +2,9 @@
 
 Catálogo de productos **3D interactivo** desarrollado con **React** y **Three.js**, diseñado para funcionar tanto en **entorno Node (desarrollo/local)** como desplegado como **Client Extension en Liferay DXP**.
 
-El proyecto presenta un sistema completo de visualización 3D de productos, con mini-visores normalizados y un visor principal avanzado, manteniendo coherencia visual independientemente del modelo 3D utilizado.
+El proyecto presenta un sistema completo de **visualización 3D de productos**, con mini-visores normalizados y un visor principal avanzado, manteniendo coherencia visual independientemente del modelo 3D utilizado.
+
+Se trata de una **DEMO TÉCNICA CENTRADA EN FRONTEND E INTEGRACIÓN VISUAL**, sin conexión a bases de datos ni uso de objetos internos de Liferay, concebida como base demostrativa y extensible para futuras integraciones backend.
 
 ![Vista general](./screenshots/cab_readme.png)
 
@@ -41,6 +43,21 @@ El resultado es una base sólida, reutilizable y extensible para **catálogos de
 - **Webpack**
 - **Node.js**
 - **Liferay DXP (Client Extensions)**
+
+### Uso de React en el proyecto
+
+React se utiliza como **capa de estructuración y composición de la interfaz**, permitiendo:
+
+- Organización del visor 3D en **componentes reutilizables** (`MiniViewer`, `ViewerLayout`, `SidePanel`, etc.).
+- Gestión clara del estado visual (pestañas, controles, interacción).
+- Separación entre:
+  - Renderizado 3D (Three.js)
+  - Lógica de interfaz
+  - Datos del catálogo
+
+No se hace uso de frameworks adicionales (Redux, Next.js, etc.), 
+manteniendo una **arquitectura React sencilla y directa**, orientada a integración
+en entornos corporativos como Liferay DXP.
 
 ---
 
