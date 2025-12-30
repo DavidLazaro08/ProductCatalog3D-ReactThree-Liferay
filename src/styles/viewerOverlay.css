@@ -1,0 +1,411 @@
+/* viewerOverlay.css
+   Overlay del visor avanzado (modal): backdrop + panel + grid + sidebar.
+   Ajustado para que el scroll lo gestione el panel y no el body/Liferay.
+*/
+
+/* ===============================
+   Variables
+   =============================== */
+
+:root {
+    --liferay-control-menu-h: 56px;
+
+    --viewer-panel-maxw: 1160px;
+    --viewer-panel-vw: 90vw;
+    --viewer-panel-maxh-gap: 64px;
+    --viewer-panel-pad-y: 18px;
+    --viewer-panel-pad-x: 24px;
+
+    --viewer-grid-rowgap: 12px;
+    --viewer-grid-colgap: 22px;
+
+    --viewer-3d-h: 380px;
+    --viewer-3d-h-mobile: 340px;
+
+    --info-title-size: 26px;
+    --info-desc-mt: 4px;
+    --info-desc-lh: 1.35;
+    --info-price-mt: 8px;
+    --info-block-mt: 8px;
+
+    --sidebar-gap: 10px;
+    --sidebar-section-mb: 8px;
+    --sidebar-section-pb: 8px;
+    --sidebar-subtitle-mb: 5px;
+
+    /* Panel lateral dentro del visor */
+    --viewer-sidepanel-w: clamp(260px, 28vw, 320px);
+
+    --scrollbar-thumb: rgba(13, 157, 146, 0.55);
+    --scrollbar-track: rgba(13, 157, 146, 0.10);
+}
+
+/* ===============================
+   Overlay principal
+   =============================== */
+
+.viewer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+
+    overflow: visible;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+body.has-control-menu .viewer-overlay {
+    top: var(--liferay-control-menu-h);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(100vh - var(--liferay-control-menu-h));
+}
+
+.viewer-backdrop {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+/* ===============================
+   Panel central
+   =============================== */
+
+.viewer-panel {
+    position: relative;
+
+    width: min(var(--viewer-panel-maxw), var(--viewer-panel-vw));
+    max-height: calc(100vh - var(--viewer-panel-maxh-gap));
+
+    background: #fff;
+    border-radius: 20px;
+    padding: var(--viewer-panel-pad-y) var(--viewer-panel-pad-x);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-gutter: stable;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.viewer-panel::-webkit-scrollbar {
+    width: 10px;
+}
+.viewer-panel::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 999px;
+}
+.viewer-panel::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+}
+.viewer-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(13, 157, 146, 0.75);
+}
+
+.viewer-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.viewer-logo {
+    height: 48px;
+    opacity: 0.95;
+    margin-bottom: 8px;
+}
+
+.viewer-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+
+    background: white;
+    border: none;
+
+    box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(0, 0, 0, 0.18);
+
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.15s ease;
+}
+
+.viewer-close:hover {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   Grid principal
+   =============================== */
+
+.viewer-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--viewer-grid-colgap);
+    row-gap: var(--viewer-grid-rowgap);
+}
+
+.viewer-3d {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    width: 100%;
+    height: var(--viewer-3d-h);
+    background: #f2f2f2;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+}
+
+.viewer-3d canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.viewer-sidebar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    padding: 4px;
+    min-height: var(--viewer-3d-h);
+}
+
+.viewer-info-main {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    margin-top: var(--info-block-mt);
+    padding-right: 22px;
+}
+
+.info-title {
+    font-size: var(--info-title-size);
+    font-weight: 700;
+    margin: 0;
+    color: #0d9d92;
+}
+
+.info-desc {
+    margin-top: var(--info-desc-mt);
+    opacity: 0.85;
+    font-size: 15px;
+    line-height: var(--info-desc-lh);
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.info-price {
+    margin-top: var(--info-price-mt);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ===============================
+   Sidebar (bloques)
+   =============================== */
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sidebar-gap);
+}
+
+.sidebar-section {
+    margin-bottom: var(--sidebar-section-mb);
+    padding-bottom: var(--sidebar-section-pb);
+}
+
+.sidebar-subtitle {
+    margin: 0 0 var(--sidebar-subtitle-mb) 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.specs-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.35;
+    opacity: 0.88;
+}
+
+.specs-list li {
+    margin-bottom: 5px;
+}
+
+.spec-features {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-left: 6px;
+}
+
+.sidebar-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag-pill {
+    padding: 3px 9px;
+    border-radius: 14px;
+    background: #eef2f3;
+    font-size: 11px;
+    color: #4a4f55;
+}
+
+.sidebar-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sidebar-thumb img {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Panel flotante dentro del visor
+   =============================== */
+
+.viewer-3d-sidepanel {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: var(--viewer-sidepanel-w) !important;
+    min-width: 260px;
+    max-width: 320px;
+    max-height: calc(100% - 24px);
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-radius: 14px;
+    padding: 10px;
+
+    box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.12),
+            inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 20;
+
+    box-sizing: border-box;
+
+    scrollbar-gutter: stable;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.viewer-3d-sidepanel::-webkit-scrollbar {
+    width: 9px;
+}
+.viewer-3d-sidepanel::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 999px;
+}
+.viewer-3d-sidepanel::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+.viewer-3d-panel-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+    pointer-events: none;
+    z-index: 30;
+}
+
+.scene-wrapper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s ease;
+}
+
+.scene-wrapper.shifted {
+    transform: translateX(-120px);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+
+@media (max-width: 980px) {
+    .viewer-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .viewer-sidebar {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        min-height: 0;
+    }
+
+    .viewer-info-main {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        padding-right: 0;
+    }
+
+    .viewer-3d {
+        height: var(--viewer-3d-h-mobile);
+    }
+
+    .viewer-3d-sidepanel {
+        width: clamp(220px, 60vw, 300px) !important;
+        min-width: 220px;
+        max-width: 300px;
+    }
+}

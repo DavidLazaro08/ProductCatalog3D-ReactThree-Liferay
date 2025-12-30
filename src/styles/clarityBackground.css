@@ -1,0 +1,283 @@
+/* clarityBackground.css
+   Fondo Clarity + grid. Ajustado para funcionar bien embebido en Liferay.
+*/
+
+/* ===============================
+   Base / layout general
+   =============================== */
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden; /* solo esto; NO tocar overflow-y aquí */
+}
+
+/* Animaciones */
+@keyframes clarityShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes clarityLightSweep {
+    0% { transform: translateX(-60%) scale(1.1); opacity: 0.12; }
+    50% { transform: translateX(120%) scale(1.25); opacity: 0.18; }
+    100% { transform: translateX(-60%) scale(1.1); opacity: 0.12; }
+}
+
+/* ===============================
+   Custom element wrapper (CLAVE)
+   =============================== */
+
+clarity-3d-viewer {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    /* Fondo “encerrado” aquí, no en body */
+    position: relative;
+    isolation: isolate;      /* aísla de Liferay */
+    overflow: hidden;        /* recorta el fondo al área del componente */
+    background: #eafffa;     /* fallback si algo falla */
+}
+
+/* Fondo animado SOLO dentro del custom element */
+clarity-3d-viewer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(120deg, #bdf8ef, #eafffa, #8bd8cc);
+    background-size: 350% 350%;
+    animation: clarityShift 10s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Luz difusa SOLO dentro del custom element */
+clarity-3d-viewer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.32) 0%,
+            rgba(255, 255, 255, 0.05) 70%,
+            transparent 100%
+    );
+    filter: blur(60px);
+    animation: clarityLightSweep 18s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Todo el contenido del React root por encima del fondo */
+.clarityRoot {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    /* NO 100vh, NO overflow-y auto */
+    height: auto;
+    overflow: visible;
+
+    position: relative;
+    z-index: 2;
+}
+
+#root,
+.clarity-container {
+    padding-top: 40px;
+}
+
+/* ===============================
+   Tipografía global (ligera)
+   =============================== */
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    color: #0e3d39;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   Fondo bubbles + parallax
+   =============================== */
+
+.bubbles-bg {
+    position: relative;
+    overflow: visible;
+}
+
+.bubble-1 {
+    position: absolute;
+    width: 580px;
+    height: 580px;
+    top: -160px;
+    left: -160px;
+    border-radius: 50%;
+    background: rgba(130, 255, 230, 0.35);
+    filter: blur(120px);
+    opacity: 0.6;
+    z-index: 0;
+    animation: bubbleFloat 26s ease-in-out infinite;
+}
+
+.bubble-2 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    bottom: -200px;
+    right: -200px;
+    border-radius: 50%;
+    background: rgba(95, 225, 205, 0.32);
+    filter: blur(140px);
+    opacity: 0.55;
+    z-index: 0;
+    animation: bubbleFloat 30s ease-in-out infinite;
+}
+
+.bubble-3 {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    top: 15%;
+    left: 50%;
+    margin-left: -240px;
+    border-radius: 50%;
+    background: rgba(210, 255, 240, 0.28);
+    filter: blur(160px);
+    opacity: 0.5;
+    z-index: 0;
+    animation: bubbleFloat 34s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat {
+    0% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(10px, -12px) scale(1.02); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.parallax-shift {
+    transform: translate3d(var(--px), var(--py), 0);
+    transition: transform 0.08s ease-out;
+    will-change: transform;
+}
+
+/* ===============================
+   Grid catálogo
+   =============================== */
+
+.clarity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    gap: 32px;
+    justify-content: center;
+    max-width: calc(4 * 260px + 3 * 32px);
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+@media (max-width: 1250px) {
+    .clarity-grid { grid-template-columns: repeat(3, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 900px) {
+    .clarity-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+}
+
+@media (max-width: 550px) {
+    .clarity-grid { grid-template-columns: repeat(1, minmax(260px, 1fr)); }
+}
+
+/* ===============================
+   Galería (GalleryBase.jsx)
+   =============================== */
+
+.clarity-page {
+    min-height: auto;
+    padding: 30px 40px;
+    position: relative;
+    isolation: isolate;
+}
+
+.bubbles-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.clarity-page header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.clarity-page h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 46px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #124442;
+    text-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.clarity-tagline {
+    margin-top: 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(7, 34, 33, 0.75);
+    min-height: 24px;
+    transition: opacity 0.6s ease;
+}
+
+.clarity-description {
+    margin: 0;
+    margin-top: 8px;
+    font-size: 15px;
+    color: rgba(7, 34, 33, 0.8);
+    max-width: 620px;
+    margin-inline: auto;
+    line-height: 1.5;
+}
+
+.clarity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1e5c58;
+    margin-bottom: 18px;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.clarity-badge:hover {
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 rgba(0,  0, 0, 0);
+}
+
+.clarity-badge img {
+    width: 16px;
+    height: 16px;
+}

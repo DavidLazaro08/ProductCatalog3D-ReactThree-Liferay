@@ -1,0 +1,10 @@
+
+/* Archivo heredado del template de Client Extension.
+   No utilizado por la aplicación Clarity 3D Viewer. */
+
+.greeting {
+	background-color: #f3e5ab;
+	display: block;
+	padding: 10px;
+}
+

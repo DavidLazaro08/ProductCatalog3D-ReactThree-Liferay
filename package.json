@@ -1,0 +1,27 @@
+{
+	"name": "@liferay/clarity-3d-viewer-work-liferay",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build": "webpack",
+		"start": "webpack-dev-server"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.28.5",
+		"@babel/preset-env": "^7.28.5",
+		"@babel/preset-react": "^7.28.5",
+		"babel-loader": "^10.0.0",
+		"css-loader": "6.10.0",
+		"style-loader": "3.3.4",
+		"webpack": "5.90.1",
+		"webpack-cli": "5.1.4",
+		"webpack-dev-server": "^5.2.2"
+	},
+	"dependencies": {
+		"@react-three/drei": "^10.7.6",
+		"@react-three/fiber": "^9.4.0",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"three": "^0.181.1"
+	}
+}

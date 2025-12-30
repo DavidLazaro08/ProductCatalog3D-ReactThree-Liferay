@@ -1,0 +1,255 @@
+/* miniViewer.css
+   Tarjetas (mini visor), paginación y elementos de UI de la galería.
+*/
+
+/* ===============================
+   Compatibilidad (clase antigua)
+   =============================== */
+
+.clarity-card {
+    transition: 0.3s ease;
+}
+
+.clarity-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===============================
+   Botones / navegación
+   =============================== */
+
+.clarity-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #0d3f3b;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.clarity-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Paginación (dots)
+   =============================== */
+
+.clarity-pagination {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    display: flex;
+    gap: 12px;
+    z-index: 50;
+}
+
+.clarity-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(6px);
+
+    transition: all 0.25s ease;
+}
+
+.clarity-dot.active {
+    background: #124442;
+    border-color: #0b3a37;
+}
+
+.clarity-dot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   MiniViewer (tarjeta catálogo)
+   =============================== */
+
+.mini-card {
+    position: relative;
+
+    width: 260px;
+    height: 200px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    backdrop-filter: blur(14px);
+
+    /* estado normal */
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    transform: translateY(0) scale(1);
+
+    transition:
+            transform 0.22s ease-out,
+            box-shadow 0.22s ease-out,
+            border-color 0.22s ease-out,
+            filter 0.22s ease-out;
+
+    will-change: transform, box-shadow, filter;
+    transform-origin: center;
+}
+
+/* Hover controlado por clase (desde JSX) */
+.mini-card.is-hovered {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.9);
+    filter: brightness(1.03);
+}
+
+/* Por si alguien usa :hover directo (suave, sin contradecir) */
+.mini-card:hover {
+    filter: brightness(1.02);
+}
+
+/* Zona 3D */
+.mini-canvas-area {
+    flex: 1;
+    height: 150px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+}
+
+/* Canvas: forzar tamaño al contenedor */
+.mini-card canvas,
+.mini-card > div canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* (si tu estructura mete el canvas en el primer div, lo dejamos) */
+.mini-card > div:first-child {
+    height: 120px !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer (botón inferior) */
+.mini-footer {
+    border: none;
+    border-top: 1px solid #eceff4;
+
+    background: #fdfdfd;
+    padding: 10px 18px;
+
+    text-align: left;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    transition: background 0.2s ease-out;
+}
+
+.mini-footer.is-hovered {
+    background: #ffffff;
+}
+
+.mini-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1f2933;
+}
+
+.mini-stats {
+    font-size: 12px;
+    color: #778190;
+    display: flex;
+    gap: 12px;
+}
+
+/* ===============================
+   Footer estilo Sketchfab PRO (otros componentes)
+   =============================== */
+
+.clarity-footer {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255, 255, 255, 0.55);
+    padding: 10px 14px;
+    min-height: 60px;
+}
+
+/* ===============================
+   Animaciones / estados
+   =============================== */
+
+.fade-in-wrapper {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInCard 1.45s ease-out forwards;
+}
+
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-tagline {
+    opacity: 0;
+}
+
+/* ===============================
+   Loader (mini visor)
+   =============================== */
+
+.mini-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.mini-spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-top-color: #124442;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

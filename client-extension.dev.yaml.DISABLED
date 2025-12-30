@@ -1,0 +1,17 @@
+# client-extensions.dev.yaml.DISABLED
+#
+# Este archivo se usó durante el desarrollo para cargar el visor
+# directamente desde el servidor de Node (localhost:3000).
+#
+# Se deja como referencia, pero permanece DESACTIVADO para que:
+# - Liferay cargue siempre la versión empaquetada (ZIP / build)
+# - No haya dependencias del servidor de desarrollo
+# - El comportamiento sea el mismo que en entorno real
+#
+# Si se necesita depurar en caliente de nuevo, se puede reactivar
+# renombrando el archivo a client-extensions.dev.yaml
+
+clarity-3d-viewer-work-liferay:
+    baseURL: http://localhost:3000
+    urls:
+        - index.js

@@ -1,0 +1,358 @@
+/* sidePanel.css
+   Panel lateral — Clarity VisionOS (solo visor)
+   Mejoras: tabs estilo pill verde Clarity, sin títulos duplicados, render condicional
+*/
+
+/* ===============================
+   Contenedor
+   =============================== */
+
+.clarity-sidepanel-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* ===============================
+   Botón hamburguesa
+   =============================== */
+
+.clarity-sidepanel-toggle {
+    pointer-events: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    background: rgba(240, 255, 252, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+    z-index: 9999;
+}
+
+/* Icono */
+.clarity-toggle-icon {
+    width: 18px;
+    height: 12px;
+    position: relative;
+}
+
+.clarity-toggle-icon span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #111;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.clarity-toggle-icon span:nth-child(1) {
+    top: 0;
+}
+
+.clarity-toggle-icon span:nth-child(2) {
+    top: 5px;
+}
+
+.clarity-toggle-icon span:nth-child(3) {
+    top: 10px;
+}
+
+/* Estado abierto -> X */
+.clarity-sidepanel-container.open .clarity-toggle-icon span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+}
+
+.clarity-sidepanel-container.open .clarity-toggle-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.clarity-sidepanel-container.open .clarity-toggle-icon span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+/* ===============================
+   Panel lateral
+   =============================== */
+
+.clarity-sidepanel {
+    pointer-events: auto;
+
+    width: 195px;
+    height: 100%;
+    box-sizing: border-box;
+
+    background: rgba(220, 245, 240, 0.22);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-left: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 0 22px 22px 0;
+    padding: 70px 14px 16px;
+
+    font-size: 0.88rem;
+
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.clarity-sidepanel-container.open .clarity-sidepanel {
+    transform: translateX(0);
+}
+
+/* ===============================
+   Ajustes solo en Liferay
+   (evita wrap + overflow de 1px)
+   =============================== */
+
+body.has-control-menu .clarity-sidepanel {
+    width: 195px;
+    padding: 64px 11px 14px;
+    font-size: 0.84rem;
+}
+
+/* ===============================
+   Tabs - Estilo Clarity Premium
+   =============================== */
+
+.sidepanel-tabs-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.sidepanel-tabs-row button {
+    width: 100%;
+    padding: 8px 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(17, 17, 17, 0.75);
+
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+    user-select: none;
+}
+
+.sidepanel-tabs-row button:hover {
+    background: rgba(255, 255, 255, 0.32);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Tab activo - Verde agua Clarity (del fondo) */
+.sidepanel-tabs-row button.active {
+    background: rgba(210, 255, 240, 0.75);
+    border: 1px solid rgba(130, 255, 230, 0.65);
+    box-shadow: 0 2px 10px rgba(130, 255, 230, 0.25);
+    color: #065f46;
+}
+
+/* Iconos cambian a verde cuando activo */
+.sidepanel-tabs-row button.active svg {
+    color: #10b981;
+    filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
+}
+
+/* ===============================
+   Contenido del panel
+   =============================== */
+
+.sidepanel-content{
+    height: auto;
+    overflow: visible;
+}
+
+.panel-section {
+    padding: 0;
+    margin: 0;
+}
+
+/* ===============================
+   Títulos ocultos (accesibilidad)
+   =============================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Si quedara algún h3 visible, ocultarlo */
+.panel-section h3:not(.sr-only) {
+    display: none;
+}
+
+/* ===============================
+   Textos
+   =============================== */
+
+.panel-hint {
+    margin: 6px 0 8px;
+    padding: 6px 10px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #065f46;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 8px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* ===============================
+   Grids de colores - Centrados
+   =============================== */
+
+.grid-2cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px 0 14px;
+    justify-items: center;
+}
+
+.grid-3cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin: 8px 0 12px;
+    justify-items: center;
+}
+
+.color-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 12px rgba(130, 255, 230, 0.35);
+    border-color: rgba(130, 255, 230, 0.8);
+}
+
+/* ===============================
+   Botón auto-rotación
+   =============================== */
+
+.btn-autorotate {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 8px 0;
+
+    background: rgba(209, 250, 229, 0.5);
+    border: 1.5px solid rgba(16, 185, 129, 0.4);
+    border-radius: 12px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #065f46;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.btn-autorotate:hover {
+    background: rgba(209, 250, 229, 0.8);
+    border-color: rgba(16, 185, 129, 0.7);
+    box-shadow: 0 3px 12px rgba(16, 185, 129, 0.25);
+}
+
+/* ===============================
+   Color picker
+   =============================== */
+
+.color-picker-full {
+    width: 100%;
+    height: 42px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.color-picker-full:hover {
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.15);
+}
+
+/* ===============================
+   Lista info
+   =============================== */
+
+.panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.panel-list li {
+    font-size: 0.76rem;
+    padding: 6px 10px 6px 24px;
+    margin: 3px 0;
+    color: #065f46;
+    font-weight: 500;
+    line-height: 1.4;
+    position: relative;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.panel-list li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1rem;
+}

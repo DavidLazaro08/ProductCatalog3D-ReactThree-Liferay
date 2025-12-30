@@ -1,0 +1,180 @@
+[
+  {
+    "id": "clarity_nova",
+    "name": "Clarity Nova",
+    "file": "clarity_nova.glb",
+    "views": 17400,
+    "likes": 260,
+    "comments": 4,
+    "rotation": [0, 0, 0],
+    "description": "Diseño futurista con panel lumínico NovaLight que mejora la visibilidad en entornos urbanos.",
+    "price": 319,
+    "tags": ["futuristic", "urban", "premium"],
+    "specs": {
+      "material": "Polímero NovaFlex",
+      "weight": "19g",
+      "battery": "15h",
+      "processor": "Clarity Vision M1",
+      "lens": "NovaLight AR",
+      "connectivity": "WiFi, Bluetooth",
+      "features": ["Panel NovaLight", "Modo noche urbana", "Audio direccional"]
+    },
+    "category": "Concept"
+  },
+  {
+    "id": "clarity_horizon",
+    "name": "Clarity Horizon",
+    "file": "clarity_horizon.glb",
+    "views": 19800,
+    "likes": 310,
+    "comments": 6,
+    "rotation": [0, 0, 0],
+    "description": "Diseño panorámico con campo de visión ampliado y sistema anti-reflejos HorizonX.",
+    "price": 339,
+    "tags": ["panoramic", "outdoor", "premium"],
+    "specs": {
+      "material": "Titanio HZ",
+      "weight": "20g",
+      "battery": "13h",
+      "processor": "Clarity Core X2",
+      "lens": "HorizonX Wide Lens",
+      "connectivity": "Bluetooth LE",
+      "features": ["Campo visual ampliado", "Anti-reflejos HorizonX", "AR Ready"]
+    },
+    "category": "Outdoor"
+  },
+  {
+    "id": "clarity_ghost",
+    "name": "Clarity Ghost",
+    "file": "clarity_ghost.glb",
+    "views": 11200,
+    "likes": 130,
+    "comments": 2,
+    "rotation": [0, 0, 0],
+    "description": "Modelo minimalista con acabado mate y presencia visual ultra discreta.",
+    "price": 289,
+    "tags": ["stealth", "minimal", "urban"],
+    "specs": {
+      "material": "Polímero PhantomTone",
+      "weight": "17g",
+      "battery": "12h",
+      "processor": "Clarity Secure M1",
+      "lens": "Ghost Matte Lens",
+      "connectivity": "Bluetooth",
+      "features": ["Modo discreto", "Material antirreflejo", "Diseño minimalista"]
+    },
+    "category": "Stealth"
+  },
+  {
+    "id": "clarity_pulse",
+    "name": "Clarity Pulse",
+    "file": "clarity_pulse.glb",
+    "views": 8200,
+    "likes": 90,
+    "comments": 1,
+    "rotation": [0, 0, 0],
+    "description": "Modelo con sensor biométrico integrado ideal para entrenamientos de alto rendimiento.",
+    "price": 279,
+    "tags": ["sport", "fitness", "ai"],
+    "specs": {
+      "material": "Fibra PulseFlex",
+      "weight": "18g",
+      "battery": "11h",
+      "processor": "Clarity Sport P1",
+      "lens": "Pulse Reactive Lens",
+      "connectivity": "Bluetooth LE",
+      "features": ["Sensor biométrico", "Modo entrenamiento", "Asistente de ritmo"]
+    },
+    "category": "Sport"
+  },
+  {
+    "id": "clarity_prime",
+    "name": "Clarity Prime",
+    "file": "clarity_prime.glb",
+    "views": 15200,
+    "likes": 240,
+    "comments": 3,
+    "rotation": [0, 0, 0],
+    "description": "La versión Prime combina elegancia con IA adaptativa y filtros de luz inteligente.",
+    "price": 349,
+    "tags": ["premium", "ai", "adaptive"],
+    "specs": {
+      "material": "Acero ultra ligero",
+      "weight": "22g",
+      "battery": "14h",
+      "processor": "Clarity Prime C2",
+      "lens": "Smart Adaptive Lens",
+      "connectivity": "WiFi, Bluetooth",
+      "features": ["IA adaptativa", "Filtro luz inteligente", "Modo presentación"]
+    },
+    "category": "Premium"
+  },
+  {
+    "id": "clarity_orbit",
+    "name": "Clarity Orbit",
+    "file": "clarity_orbit.glb",
+    "views": 12700,
+    "likes": 160,
+    "comments": 3,
+    "rotation": [0, 0, 0],
+    "description": "Diseño envolvente con sensores de movimiento aptos para deportes y conducción.",
+    "price": 299,
+    "tags": ["sport", "motion", "driving"],
+    "specs": {
+      "material": "Orbit Composite",
+      "weight": "19g",
+      "battery": "12h",
+      "processor": "Clarity Motion X1",
+      "lens": "Orbit360 Lens",
+      "connectivity": "Bluetooth LE",
+      "features": ["Sensor de movimiento", "Modo conducción", "Lens 360º"]
+    },
+    "category": "Sport"
+  },
+  {
+    "id": "clarity_flux",
+    "name": "Clarity Flux",
+    "file": "clarity_flux.glb",
+    "views": 9900,
+    "likes": 125,
+    "comments": 2,
+    "rotation": [0, 0, 0],
+    "description": "Modelo con lentes dinámicas que se ajustan automáticamente a la luminosidad del entorno.",
+    "price": 309,
+    "tags": ["adaptive", "smartlens", "premium"],
+    "specs": {
+      "material": "Alloy FluxLite",
+      "weight": "18g",
+      "battery": "13h",
+      "processor": "Clarity Flux F1",
+      "lens": "Dynamic SmartLens",
+      "connectivity": "Bluetooth",
+      "features": ["Lente dinámica", "Modo exterior/interior", "Auto ajuste"]
+    },
+    "category": "Adaptive"
+  },
+  {
+    "id": "clarity_phantom",
+    "name": "Clarity Phantom",
+    "file": "clarity_phantom.glb",
+    "views": 14600,
+    "likes": 210,
+    "comments": 4,
+    "rotation": [0, 0, 0],
+    "description": "Edición Phantom con capa AR translúcida y diseño ligero de gama alta.",
+    "price": 359,
+    "tags": ["ar", "premium", "concept"],
+    "specs": {
+      "material": "Phantom Polymer",
+      "weight": "17g",
+      "battery": "14h",
+      "processor": "Clarity AR P2",
+      "lens": "Phantom AR Layer",
+      "connectivity": "WiFi, Bluetooth LE",
+      "features": ["Capas AR", "Modo proyección", "Diseño translúcido"]
+    },
+    "category": "Concept"
+  }
+]
+
+

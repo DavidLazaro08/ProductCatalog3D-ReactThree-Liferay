@@ -1,0 +1,179 @@
+[
+  {
+    "id": "clarity_alpha",
+    "name": "Clarity Alpha",
+    "file": "clarity_alpha.glb",
+    "views": 40200,
+    "likes": 610,
+    "comments": 12,
+    "rotation": [0, 0, 0],
+    "description": "Diseño cat-eye con bordes elevados y un estilo elegante pensado para uso diario premium. Equilibra moda y tecnología con un acabado limpio y nítido.",
+    "price": 299,
+    "tags": ["premium", "elegant", "daily"],
+    "specs": {
+      "material": "Polímero CrystalLite",
+      "weight": "18g",
+      "battery": "12h",
+      "processor": "Clarity Core M1",
+      "lens": "CrystalLite Neutral",
+      "connectivity": "Bluetooth LE",
+      "features": ["Asistente por gestos", "Modo lectura", "Audio ambiental suave"]
+    },
+    "category": "Premium"
+  },
+  {
+    "id": "clarity_sentinel",
+    "name": "Clarity Sentinel",
+    "file": "clarity_sentinel.glb",
+    "views": 28600,
+    "likes": 480,
+    "comments": 9,
+    "rotation": [0, 0, 0],
+    "description": "Montura robusta pensada para exteriores con lentes oscuras protectoras. Ideal para actividades tácticas, senderismo o conducción.",
+    "price": 329,
+    "tags": ["outdoor", "tactical", "dark"],
+    "specs": {
+      "material": "Titanio ultraligero",
+      "weight": "23g",
+      "battery": "14h",
+      "processor": "Clarity Core M2",
+      "lens": "DeepBlack Outdoor",
+      "connectivity": "Bluetooth LE",
+      "features": ["Modo solar avanzado", "Bloqueo de reflejos", "Optimización para exteriores"]
+    },
+    "category": "Outdoor"
+  },
+  {
+    "id": "clarity_heart",
+    "name": "Clarity Heart",
+    "file": "clarity_heart.glb",
+    "views": 5400,
+    "likes": 120,
+    "comments": 8,
+    "rotation": [0, 0, 0],
+    "description": "Un icono de estilo con lentes en forma de corazón y acabado rosa metalizado. Pensado para destacar en lifestyle, eventos y moda urbana.",
+    "price": 219,
+    "tags": ["fashion", "lifestyle", "fun"],
+    "specs": {
+      "material": "Aluminio ligero",
+      "weight": "17g",
+      "battery": "10h",
+      "processor": "Clarity Mini A1",
+      "lens": "HeartPink Optical",
+      "connectivity": "Bluetooth",
+      "features": ["Modo foto", "Tonos rosados suaves", "Ultraligeras"]
+    },
+    "category": "Lifestyle"
+  },
+  {
+    "id": "clarity_fuel",
+    "name": "Clarity Fuel",
+    "file": "clarity_fuel.glb",
+    "views": 12400,
+    "likes": 210,
+    "comments": 4,
+    "rotation": [0, 0, 0],
+    "description": "Montura deportiva negra con diseño envolvente y soporte para entrenamientos intensivos. Ideal para running y ciclismo.",
+    "price": 279,
+    "tags": ["sport", "performance", "training"],
+    "specs": {
+      "material": "Fibra compuesta",
+      "weight": "18g",
+      "battery": "11h",
+      "processor": "Clarity Sport S1",
+      "lens": "Sport Reactive Black",
+      "connectivity": "Bluetooth LE",
+      "features": ["Modo Running", "Asistente de ritmo", "Resistencia al sudor"]
+    },
+    "category": "Sport"
+  },
+  {
+    "id": "clarity_square",
+    "name": "Clarity Square",
+    "file": "clarity_square.glb",
+    "views": 19800,
+    "likes": 340,
+    "comments": 4,
+    "rotation": [0, 0, 0],
+    "description": "Montura cuadrada ultraminimalista con líneas rectas y estética arquitectónica. Ideal para entornos creativos y trabajo en estudio.",
+    "price": 259,
+    "tags": ["urban", "minimal", "studio"],
+    "specs": {
+      "material": "Acero ultrafino",
+      "weight": "20g",
+      "battery": "12h",
+      "processor": "Clarity Urban U2",
+      "lens": "SharpLine Optical",
+      "connectivity": "WiFi, Bluetooth",
+      "features": ["Filtro luz azul", "Modo oficina", "Optimización para pantallas"]
+    },
+    "category": "Urban"
+  },
+  {
+    "id": "clarity_aero",
+    "name": "Clarity Aero",
+    "file": "clarity_aero.glb",
+    "views": 7200,
+    "likes": 130,
+    "comments": 15,
+    "rotation": [0, 0, 0],
+    "description": "Diseño ultraligero casi invisible, pensado para largas jornadas sin fatiga. Lentes transparentes y puente fino para una experiencia aérea.",
+    "price": 289,
+    "tags": ["lightweight", "premium", "comfort"],
+    "specs": {
+      "material": "Carbono AeroFlex",
+      "weight": "14g",
+      "battery": "16h",
+      "processor": "Clarity Aero A2",
+      "lens": "AeroCrystal Clear",
+      "connectivity": "Bluetooth LE",
+      "features": ["Audio direccional", "Modo confort", "Ajuste ergonómico"]
+    },
+    "category": "Premium"
+  },
+  {
+    "id": "clarity_blade",
+    "name": "Clarity Blade",
+    "file": "clarity_blade.glb",
+    "views": 10400,
+    "likes": 390,
+    "comments": 11,
+    "rotation": [0, 0, 0],
+    "description": "Montura futurista con contornos agresivos y proyección AR frontal. Diseñada para creadores digitales, gaming y experiencias inmersivas.",
+    "price": 349,
+    "tags": ["futuristic", "AR", "concept"],
+    "specs": {
+      "material": "Aluminio anodizado oscuro",
+      "weight": "22g",
+      "battery": "14h",
+      "processor": "Clarity Vision 2X",
+      "lens": "AR Projection Layer",
+      "connectivity": "WiFi 6, Bluetooth",
+      "features": ["HUD minimalista", "Modo XR", "Control gestual avanzado"]
+    },
+    "category": "Concept"
+  },
+  {
+    "id": "clarity_spy",
+    "name": "Clarity Spy",
+    "file": "clarity_spy.glb",
+    "views": 6500,
+    "likes": 180,
+    "comments": 2,
+    "rotation": [0, 0, 0],
+    "description": "Montura totalmente opaca con estilo 'stealth'. Diseñada para máxima privacidad, grabación direccional y uso discreto.",
+    "price": 309,
+    "tags": ["stealth", "privacy", "dark"],
+    "specs": {
+      "material": "Polímero opaco StealthSkin",
+      "weight": "21g",
+      "battery": "12h",
+      "processor": "Clarity Secure S1",
+      "lens": "Privacy Black Shield",
+      "connectivity": "Bluetooth",
+      "features": ["Micrófono oculto", "Modo privacidad total", "Audio direccional"]
+    },
+    "category": "Stealth"
+  }
+
+]

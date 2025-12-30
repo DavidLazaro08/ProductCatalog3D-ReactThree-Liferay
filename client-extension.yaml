@@ -1,0 +1,20 @@
+assemble:
+    - from: build/static
+      into: static
+    - from: public/glb_models
+      into: static/glb_models
+    - from: public/hdri
+      into: static/hdri
+    - from: public/clarity
+      into: static/clarity
+
+clarity-3d-viewer-work-liferay:
+    friendlyURLMapping: clarity-3d-viewer
+    htmlElementName: clarity-3d-viewer
+    instanceable: false
+    name: Clarity 3D Viewer
+    portletCategoryName: category.client-extensions
+    type: customElement
+    urls:
+        - index.js
+    useESM: true
