@@ -10,9 +10,7 @@ El proyecto presenta un sistema completo de visualización 3D de productos, con 
 
 ## 🧩 Descripción general
 
-Este proyecto implementa un **sistema completo de catálogo 3D**, aplicado en este caso a un conjunto de gafas, pero **totalmente agnóstico al tipo de producto**.
-
-Incluye:
+Este proyecto implementa un **sistema completo de catálogo 3D**, aplicado en este caso a monturas de gafas, que incluye:
 
 - Grid de **mini-visores 3D** para navegación por catálogo.
 - **Visor 3D principal** para inspección detallada del producto.
@@ -21,8 +19,8 @@ Incluye:
   - Escalado automático
   - Corrección de orientación  
   Esto permite incorporar nuevos modelos sin ajustes manuales.
-- Interfaz moderna con:
-  - Estilo glassmorphism
+- Interfaz moderna y limpia con:
+  - Estética tipo *glassmorphism*
   - Efectos hover
   - Diseño modular y escalable
 - Panel lateral interactivo:
@@ -48,9 +46,9 @@ El resultado es una base sólida, reutilizable y extensible para **catálogos de
 
 ## 🚀 Ejecución en Node (desarrollo / demo local)
 
-El proyecto puede ejecutarse de forma independiente como una aplicación React estándar.
+El proyecto puede ejecutarse como "aplicación React estándar" y de forma independiente en un entorno local.
 
-### Requisitos
+### Requisitos previos
 
 - **Node.js** (versión LTS recomendada)
 
@@ -80,44 +78,49 @@ Esta modalidad es ideal para:
 
 ---
 
+## 📦 Release oficial (Client Extension para Liferay)
+
+Además del código fuente, el proyecto dispone de una **Release oficial** que incluye el **ZIP final ya empaquetado**, listo para desplegar directamente en **Liferay DXP**.
+
+👉 **Recomendado** si solo se desea probar o desplegar el visor sin necesidad de construir el proyecto.
+
+- El ZIP **no forma parte del código fuente**
+- Se distribuye mediante la sección **Releases** del repositorio
+👉 [Descargar Release v2025.12.30](https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30)
+
+- Corresponde a la **versión final validada** tanto en Node.js como en Liferay DXP
+
+---
+
 ## 🏗️ Despliegue en Liferay DXP (Client Extension)
 
-Este proyecto incluye la versión final empaquetada como Client Extension para Liferay.
+El proyecto está preparado para funcionar como **Client Extension** dentro de un **workspace de Liferay DXP**.
 
-### ZIP listo para desplegar
+### Opción A — Usando el ZIP de la Release (recomendada)
 
-En la carpeta:
+1. Descargar el ZIP desde la sección **Releases** del repositorio:
+👉 https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30
 
-```
-release_client-extension-zip/
-```
+2. Copiar el archivo ZIP en la ruta:
 
-se incluye:
-
-- El ZIP final de la Client Extension
-- Un README específico con instrucciones resumidas
-
-### Despliegue rápido (recomendado)
-
-1. Copiar el archivo ZIP en:
-
-```
+```text
 liferay-workspace/bundles/osgi/modules
 ```
+3. Iniciar Liferay (auto-deploy).
 
-2. Iniciar Liferay (auto-deploy)
+No es necesario ejecutar Node ni realizar procesos de build adicionales.
 
-No es necesario reconstruir el proyecto.
+---
 
-### Despliegue manual (opcional)
+### Opción B — Generar el ZIP manualmente
 
-El repositorio incluye:
+Pensado para quien desee revisar o reconstruir el artefacto final.
 
-- `client-extension.yaml`
-- Configuración Webpack compatible con Liferay
-
-Puede generarse nuevamente el ZIP siguiendo el flujo estándar de Client Extensions si se desea realizar pruebas o modificaciones.
-
+```bash
+npm install
+npm run build
+```
+A continuación, generar el ZIP de la Client Extension según el flujo habitual de Liferay.
 ---
 
 ## 🧠 Notas de diseño
@@ -138,12 +141,16 @@ Arquitectura pensada para integración en portales corporativos:
 
 ## 🏢 Contexto del proyecto
 
-Este desarrollo se realizó en un entorno formativo corporativo, con el objetivo de explorar y validar el uso de Client Extensions en Liferay DXP combinadas con visualización 3D avanzada en React.
+Este proyecto se desarrolló inicialmente en un contexto de **formación corporativa y experimentación técnica**, con el objetivo de integrar **visualización 3D avanzada** dentro de **Liferay DXP** mediante **Client Extensions**.
 
-A diferencia de versiones anteriores, este repositorio unifica en un único proyecto funcional:
+Durante el desarrollo:
 
-- Ejecución en Node
-- Despliegue real en Liferay
+- El proyecto funcionó inicialmente **solo en entorno Node.js**.
+- Posteriormente se adaptó y validó para funcionar **simultáneamente** en:
+  - Ejecución local (**Node.js**)
+  - Despliegue real como **Client Extension en Liferay DXP**
+
+El repositorio actual representa la **versión unificada y final**, compatible con ambos entornos.
 
 ---
 
@@ -159,8 +166,8 @@ A diferencia de versiones anteriores, este repositorio unifica en un único proy
 
 ### Integración en Liferay
 
-![Integración en Liferay](./screenshots/liferay.png)
-
+![Integración en Liferay](./screenshots/liferay1.png)
+![Integración en Liferay2](./screenshots/liferay2.png)
 ---
 
 ## 👤 Autores
