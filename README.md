@@ -82,11 +82,11 @@ Esta modalidad es ideal para:
 
 Además del código fuente, el proyecto dispone de una **Release oficial** que incluye el **ZIP final ya empaquetado**, listo para desplegar directamente en **Liferay DXP**.
 
-👉 **Recomendado** si solo se desea probar o desplegar el visor sin necesidad de construir el proyecto.
+▶ **Recomendado** si solo se desea probar o desplegar el visor sin necesidad de construir el proyecto.
 
 - El ZIP **no forma parte del código fuente**
 - Se distribuye mediante la sección **Releases** del repositorio  
-👉 [Descargar Release v2025.12.30](https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30)
+▶ [Descargar Release v2025.12.30](https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30)
 
 - Corresponde a la **versión final validada** tanto en Node.js como en Liferay DXP
 
@@ -100,7 +100,7 @@ El proyecto está preparado para funcionar como **Client Extension** dentro de u
 
 1. Descargar el ZIP desde la sección **Releases** del repositorio:
 
-👉 https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30
+▶ https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30
 
 2. Copiar el archivo ZIP en la ruta:
 
