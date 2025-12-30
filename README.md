@@ -1,4 +1,4 @@
-# ProductCatalog3D-ReactThree-Liferay
+# <img width="25" height="25" alt="Catalogo" src="https://github.com/user-attachments/assets/190c44a7-4e96-46c8-bc1c-cffd85915805" /> ProductCatalog3D-ReactThree-Liferay
 
 Catálogo de productos **3D interactivo** desarrollado con **React** y **Three.js**, diseñado para funcionar tanto en **entorno Node (desarrollo/local)** como desplegado como **Client Extension en Liferay DXP**.
 
@@ -8,7 +8,7 @@ El proyecto presenta un sistema completo de visualización 3D de productos, con 
 
 ---
 
-## 🧩 Descripción general
+## <img width="20" height="20" alt="Descripción" src="https://github.com/user-attachments/assets/d6b53e03-c4fb-49b1-9bc8-20af54d777e2" /> Descripción general
 
 Este proyecto implementa un **sistema completo de catálogo 3D**, aplicado en este caso a monturas de gafas, que incluye:
 
@@ -33,7 +33,7 @@ El resultado es una base sólida, reutilizable y extensible para **catálogos de
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## <img width="20" height="20" alt="Tecnologia" src="https://github.com/user-attachments/assets/12559971-46be-4064-9fd4-8b07f494e6aa" /> Tecnologías utilizadas
 
 - **React**
 - **Three.js**
@@ -44,7 +44,7 @@ El resultado es una base sólida, reutilizable y extensible para **catálogos de
 
 ---
 
-## 🚀 Ejecución en Node (desarrollo / demo local)
+## <img width="20" height="20" alt="Ejecucion" src="https://github.com/user-attachments/assets/ddaff5a0-f1a6-465c-9d13-6d83bb40d101" /> Ejecución en Node (desarrollo / demo local)
 
 El proyecto puede ejecutarse como "aplicación React estándar" y de forma independiente en un entorno local.
 
@@ -78,27 +78,28 @@ Esta modalidad es ideal para:
 
 ---
 
-## 📦 Release oficial (Client Extension para Liferay)
+## <img width="20" height="20" alt="Release" src="https://github.com/user-attachments/assets/fa1c0990-a566-4376-a6f5-5a696d69af9a" /> Release oficial (Client Extension para Liferay)
 
 Además del código fuente, el proyecto dispone de una **Release oficial** que incluye el **ZIP final ya empaquetado**, listo para desplegar directamente en **Liferay DXP**.
 
 👉 **Recomendado** si solo se desea probar o desplegar el visor sin necesidad de construir el proyecto.
 
 - El ZIP **no forma parte del código fuente**
-- Se distribuye mediante la sección **Releases** del repositorio
+- Se distribuye mediante la sección **Releases** del repositorio  
 👉 [Descargar Release v2025.12.30](https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30)
 
 - Corresponde a la **versión final validada** tanto en Node.js como en Liferay DXP
 
 ---
 
-## 🏗️ Despliegue en Liferay DXP (Client Extension)
+## <img width="20" height="20" alt="Capturas" src="https://github.com/user-attachments/assets/eea4fb95-9434-4db9-9009-0e9feeb863cf" /> Despliegue en Liferay DXP (Client Extension)
 
 El proyecto está preparado para funcionar como **Client Extension** dentro de un **workspace de Liferay DXP**.
 
 ### Opción A — Usando el ZIP de la Release (recomendada)
 
 1. Descargar el ZIP desde la sección **Releases** del repositorio:
+
 👉 https://github.com/DavidLazaro08/ProductCatalog3D-ReactThree-Liferay/releases/tag/v2025.12.30
 
 2. Copiar el archivo ZIP en la ruta:
@@ -110,8 +111,7 @@ liferay-workspace/bundles/osgi/modules
 
 No es necesario ejecutar Node ni realizar procesos de build adicionales.
 
----
-
+-----------------
 ### Opción B — Generar el ZIP manualmente
 
 Pensado para quien desee revisar o reconstruir el artefacto final.
@@ -121,9 +121,10 @@ npm install
 npm run build
 ```
 A continuación, generar el ZIP de la Client Extension según el flujo habitual de Liferay.
+
 ---
 
-## 🧠 Notas de diseño
+## <img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/cefc4a34-c7ca-487d-9cef-bbc7651d6363" /> Notas de diseño
 
 Arquitectura pensada para integración en portales corporativos:
 
@@ -139,7 +140,7 @@ Arquitectura pensada para integración en portales corporativos:
 
 ---
 
-## 🏢 Contexto del proyecto
+## <img width="20" height="20" alt="Contexto" src="https://github.com/user-attachments/assets/3a8384cf-5085-46e7-b694-fd50c850e384" /> Contexto del proyecto
 
 Este proyecto se desarrolló inicialmente en un contexto de **formación corporativa y experimentación técnica**, con el objetivo de integrar **visualización 3D avanzada** dentro de **Liferay DXP** mediante **Client Extensions**.
 
@@ -154,7 +155,7 @@ El repositorio actual representa la **versión unificada y final**, compatible c
 
 ---
 
-## 📸 Capturas
+## <img width="20" height="20" alt="Capturas" src="https://github.com/user-attachments/assets/eea4fb95-9434-4db9-9009-0e9feeb863cf" /> Capturas
 
 ### Catálogo
 
@@ -170,7 +171,7 @@ El repositorio actual representa la **versión unificada y final**, compatible c
 ![Integración en Liferay2](./screenshots/liferay2.png)
 ---
 
-## 👤 Autores
+## <img width="20" height="20" alt="Autores" src="https://github.com/user-attachments/assets/324dc210-5510-4329-b878-84ec229b65bd" /> Autores
 
 **David Gutiérrez**  
 GitHub: [https://github.com/DavidLazaro08](https://github.com/DavidLazaro08)
@@ -180,6 +181,6 @@ GitHub: [https://github.com/Benemerito86](https://github.com/Benemerito86)
 
 ---
 
-## 📄 Licencia
+## <img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/61e0e0cf-7e67-4b78-9c2d-952a341b86ce" /> Licencia
 
 Proyecto compartido con fines educativos, demostrativos y de portfolio.
